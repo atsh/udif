@@ -23,7 +23,7 @@ ifdef KEEP_BUILDS
 BUILD := _$(TOP)_$(TIMESTAMP)
 endif
 
-TECH := sky130_cadence
+TECH := $(shell grep "^set TECH" project_setup.tcl | cut -d' ' -f3 | sed -e 's/"//g') 
 
 
 OPT_INNOVUS := ""
