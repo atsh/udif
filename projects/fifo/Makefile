@@ -30,7 +30,7 @@ OPT_INNOVUS := ""
 OPT_GENUS := ""
 
 
-.PHONY: all synth pnr lec clean
+.PHONY: all sim synth pnr lec clean
 
 all: signoff
 	
@@ -46,7 +46,7 @@ elaborate:
 	cd sim ; \
 	make elaborate
 
-verify: elaborate
+verify: 
 	cd sim ; \
 	make verify
 
@@ -56,9 +56,9 @@ synth$(BUILD)/outputs/$(TOP)_gate.v:
 	mkdir -vp synth$(BUILD) ; \
 	mkdir -vp synth$(BUILD)/design_data ; \
 	mkdir -vp synth$(BUILD)/scripts ; \
-	cp -vp $(shell python3 $(REPO_ROOT)/util/compile.py manifest.json syn) synth$(BUILD)/design_data ; \
-	cp -vp $(shell python3 $(REPO_ROOT)/util/compile.py manifest.json syn_sdc) synth$(BUILD)/design_data ; \
-	cp -vr $(REPO_ROOT)/util/scripts/synth/* synth$(BUILD)/scripts ; \
+	cp -vrp $(shell python3 $(REPO_ROOT)/util/compile.py manifest.json syn) synth$(BUILD)/design_data ; \
+	cp -vrp $(shell python3 $(REPO_ROOT)/util/compile.py manifest.json syn_sdc) synth$(BUILD)/design_data ; \
+	cp -vrp $(REPO_ROOT)/util/scripts/synth/* synth$(BUILD)/scripts ; \
 	cd synth$(BUILD) ; \
 	unlink outputs; unlink reports; unlink logs; \
 	genus -f scripts/run_synth.tcl

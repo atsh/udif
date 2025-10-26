@@ -10,7 +10,7 @@ endif
 elaborate:
 	python3 $(REPO_ROOT)/util/compile.py ../manifest.json --elaborate
 
-verify:
+verify: elaborate
 	python3 $(REPO_ROOT)/util/compile.py ../manifest.json --verify
 
 clean:

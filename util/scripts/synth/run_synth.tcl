@@ -262,4 +262,4 @@ sh ln -s $_LOG_PATH logs
 
 #write_db $::env(TOP).db
 
-#quit
+quit
