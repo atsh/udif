@@ -5,11 +5,12 @@
 # NOTE: It must be same as the diretory name in projects/
 setenv PROJECT $1
 
-# KEEP_BUILD "true" will create new synth and pnr directories
+# KEEP_BUILDS "true" will create new synth and pnr directories
 # with the following naming convention synth/pnr_<BLOCK>_<YYYYMMDD_HHMM> by default
 # or the value of BUILD provided by the user (e.g. make pnr BUILD=mybuild)
 # Setting this variable "false" will overwrite the synth and pnr directory for every run
-setenv KEEP_BUILD "false" 
+# NOTE: case sensitive | use lowercase "true" only
+setenv KEEP_BUILDS "false" 
 
 # DO NOT CHANGE
 setenv REPO_ROOT "`git rev-parse --show-toplevel`"
@@ -92,9 +93,9 @@ set path=($path ${VMANAGER_HOME}/bin ${VMANAGER_HOME}/share/bin ${VMANAGER_HOME}
 
 
 echo "******************************************************"
-echo "******        ATSH UDIF			     *******"
-echo "******        PROJECT: $PROJECT                *******"
-#echo "******        TOP: $TOP                *******"
+echo "******        ATSH UDIF			     "
+echo "******        PROJECT: $PROJECT                "
+echo "******        KEEP_BUIDLS: $KEEP_BUILDS        "
 echo "******************************************************"
 echo "                                                      "
 
