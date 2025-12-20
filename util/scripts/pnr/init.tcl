@@ -39,6 +39,7 @@ setDesignMode -process 45
 #puts "<FF> Plugin -> post_init_tcl"
 #ff_procs::source_plug post_init_tcl
 timeDesign -preplace -prefix $var(step) -outDir RPT/$var(step)
+report_power -outfile power.rpt -output RPT/$var(step) 
 checkDesign -all
 check_timing
 #-------------------------------------------------------------

@@ -13,6 +13,7 @@ ecoRoute
 
 #Reports
 timeDesign -postroute -prefix $var(step) -outDir RPT/$var(step)
+report_power -outfile power.rpt -output RPT/$var(step) 
 
 #Write design data for signoff
 # Netlist for simulation

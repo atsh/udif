@@ -18,6 +18,8 @@ ccopt_design
 
 #Reports
 timeDesign -prects -prefix $var(step) -outDir RPT/$var(step)
+
+report_power -outfile power.rpt -output RPT/$var(step) 
 #
 #save
 saveDesign DBS/cts.enc
