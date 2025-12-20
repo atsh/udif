@@ -12,7 +12,7 @@ puts "ATSH_VLSI: TECH=$TECH"
 puts "ATSH_VLSI: Starting Setup"
 
 if { $TECH == "sky130_cadence" } {
-	set TECH_DIR "/home/shafi/work/tech/sky130_cadence"
+	set TECH_DIR "/home/eee/sky130_cadence"
 	set STD_LIB_DIR "sky130_scl_9T_0.0.5"
 	puts "ATSH_VLSI: $TECH has no multivt or mbff options as of this release."
 	#set MULTIVT $::env(MULTIVT)

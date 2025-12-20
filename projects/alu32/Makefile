@@ -19,7 +19,7 @@ endif
 
 # Generating a timestamp with format: YYYYMMDD_HHMM to keep the order same choronologiaclly and alphabetically
 TIMESTAMP := $(shell date +%Y%m%d_%H%M)
-ifdef KEEP_BUILDS 
+ifeq ($(KEEP_BUILDS), true)
 BUILD := _$(TOP)_$(TIMESTAMP)
 endif
 
