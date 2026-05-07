@@ -12,8 +12,8 @@ puts "INFO_ATSH_UDIF: TECH=$TECH"
 puts "INFO_ATSH_UDIF: Starting Setup"
 
 if { $TECH == "gpdk045" } {
-	set TECH_DIR "/home/user_27/work/tech/gpdk045"
-	set STD_LIB_DIR "gsclib045_all_v4.7"
+	set TECH_DIR $::env(TECH_DIR) 
+	set STD_LIB_DIR $::env(TECH_DIR) 
 	#set MULTIVT "true"
 	if { [string equal -nocase $MULTIVT "false"] } {
 	        puts "ATSH_VLSI: MULTIVT is set to false. Using only RVT cells for synthesis. Please fix if other or all vt cells to be used."
@@ -70,9 +70,9 @@ append LIB_FILES(fast) " " "$TECH_DIR/$STD_LIB_DIR/gsclib045/timing/fast_vdd1v2_
 
 set LIB_FILES(all) "$LIB_FILES(slow) $LIB_FILES(fast)"
 
-set QRC_TECH_FILE(rcworst) "/home/user_27/work/tech/gpdk045/gpdk045_v_6_0/qrc/rcworst/qrcTechFile"
-set QRC_TECH_FILE(rcbest) "/home/user_27/work/tech/gpdk045/gpdk045_v_6_0/qrc/rcbest/qrcTechFile"
-set QRC_TECH_FILE(typical) "/home/user_27/work/tech/gpdk045/gpdk045_v_6_0/qrc/typical/qrcTechFile"
+set QRC_TECH_FILE(rcworst) "$TECH_DIR/gpdk045_v_6_0/qrc/rcworst/qrcTechFile"
+set QRC_TECH_FILE(rcbest) "$TECH_DIR/gpdk045_v_6_0/qrc/rcbest/qrcTechFile"
+set QRC_TECH_FILE(typical) "$TECH_DIR/gpdk045_v_6_0/qrc/typical/qrcTechFile"
 
 set PHYSICAL_CELL_LIST "[get_lib_cell */*FILL*]"
 set CLK_BUFFERS "[get_lib_cell */*CLKBUF*] "
