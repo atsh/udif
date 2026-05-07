@@ -16,6 +16,9 @@ export REPO_ROOT="$(git rev-parse --show-toplevel)"
 #export MBFF="false"
 #export MULTIVT="false"
 
+export TECH_DIR="/pdk/gpdk045/"
+export STD_LIB_DIR="gsclib045_all_v4.8"
+
 export CDS_Netlisting_Mode="Analog"
 export LM_LICENSE_FILE="5260@ulkains"
 
