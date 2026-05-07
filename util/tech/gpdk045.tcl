@@ -13,7 +13,7 @@ puts "INFO_ATSH_UDIF: Starting Setup"
 
 if { $TECH == "gpdk045" } {
 	set TECH_DIR $::env(TECH_DIR) 
-	set STD_LIB_DIR $::env(TECH_DIR) 
+	set STD_LIB_DIR $::env(STD_LIB_DIR) 
 	#set MULTIVT "true"
 	if { [string equal -nocase $MULTIVT "false"] } {
 	        puts "ATSH_VLSI: MULTIVT is set to false. Using only RVT cells for synthesis. Please fix if other or all vt cells to be used."
