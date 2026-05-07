@@ -7,7 +7,7 @@
 # Technology Setup
 ##########################
 #
-set TECH "sky130_cadence" ;# Options: "gpdk045 | sky130_cadence | sky130_open"
+set TECH "gpdk045" ;# Options: "gpdk045 | sky130_cadence | sky130_open"
 
 # Synthesis specific setup
 # Effect of these variable depends on the TECH used
