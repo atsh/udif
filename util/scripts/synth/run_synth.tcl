@@ -32,13 +32,14 @@ set_db / .init_hdl_search_path  {. ../RTL $DESIGN_DIR}
 ##Uncomment and specify machine names to enable super-threading.
 ##set_db / .super_thread_servers {<machine names>} 
 ##For design size of 1.5M - 5M gates, use 8 to 16 CPUs. For designs > 5M gates, use 16 to 32 CPUs
-##set_db / .max_cpus_per_server 8
+set_db / .max_cpus_per_server $SYNTH_CPU 
 
 ##Default undriven/unconnected setting is 'none'.  
 ##set_db / .hdl_unconnected_input_port_value 0 | 1 | x | none 
 ##set_db / .hdl_undriven_output_port_value   0 | 1 | x | none
 ##set_db / .hdl_undriven_signal_value        0 | 1 | x | none 
-
+#
+set_db / .auto_ungroup none
 
 ##set_db / .wireload_mode <value> 
 set_db / .information_level $SYNTH_INFO_LEVEL

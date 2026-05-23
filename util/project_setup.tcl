@@ -16,6 +16,8 @@ set MBFF "false"
 
 source -e -v $::env(REPO_ROOT)/util/tech/${TECH}.tcl 
 
+set MULTI_CPU 1
+
 
 ##########################
 # Design Setup
@@ -36,6 +38,7 @@ set GROUND_NET "VSS"
 # Synthesis Setup
 ##########################
 
+set SYNTH_CPU $MULTI_CPU
 set SYNTH_EFFORT_GENERIC "medium"
 set SYNTH_EFFORT_OPT "high"
 set SYNTH_INFO_LEVEL 7
